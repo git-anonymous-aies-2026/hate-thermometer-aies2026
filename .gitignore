@@ -1,0 +1,19 @@
+.venv_2026/
+.env
+__pycache__/
+*.pyc.DS_Store
+rsdb_slurs.json
+rsdb_slurs_with_dups.json
+
+# Data and outputs
+final_AIES_2026
+MFRM_AIES26/MFRM_Data/
+MFRM_AIES26/output files/
+*.csv
+*.json          # excludes rsdb_slurs.json
+
+# Build artifacts
+RaschPy.egg-info/
+__pycache__/
+*.pyc
+*.egg-info/
