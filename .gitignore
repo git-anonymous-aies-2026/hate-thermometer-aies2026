@@ -6,10 +6,10 @@ rsdb_slurs.json
 rsdb_slurs_with_dups.json
 
 # Data and outputs
-final_AIES_2026
+hate_thermometer_data/outputs
 MFRM_AIES26/MFRM_Data/
 MFRM_AIES26/output files/
-*.csv
+# *.csv
 *.json          # excludes rsdb_slurs.json
 
 # Build artifacts
