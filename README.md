@@ -114,7 +114,13 @@ Import all function from the   `MFRM_analysis.py`, Implement them in the `MFRM_A
     │   ├── scrape_rsbd.py          # constructing the slur tagging database
     │   ├── patching.py             # Incomplete run patching
     │   └── utils.py                # Helper functions
-    │
+    |
+    ├── hate_thermometer_data/
+    │   └── data
+    |        ├── mfrm_data          # Final data converted into MFRM acceptable format for Psychometric analysis 
+    │        ├── patched_data       # Final LLM ratting outcome after patching(rerun to reannotate incomplete annotation) 
+    │        └── raw_data           # Raw original LLM Outcome (Run 1)
+    |
     ├── analysis/
     │   └── mfrm_analysis.py        # MFRM calibration pipeline
     │  
