@@ -1,4 +1,4 @@
-# Measuring the Measurer: Psychometric Evaluation of LLMs as Hate Speech Annotators
+# MisCalibrated Judges: Psychometric Evaluation of LLMs as Hate Speech Annotators
 
 We apply the Many-Facet Rasch Model (MFRM) to evaluate five frontier LLMs as hate speech annotators, benchmarked against 591 human raters from the Measuring Hate Speech corpus.
 
