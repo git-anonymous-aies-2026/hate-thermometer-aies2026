@@ -123,12 +123,6 @@ def get_llm_ratings_with_majority_vote(dataset_samples, rater_dimension, n_runs,
                 slur_tagged_text = row.slur_tagged_text
                 original_idx = row.index
                 try:
-                    # Call LLM raters
-                    dim_result = rater_dimension(
-                        text=text, 
-                        slur_tagged_text=slur_tagged_text
-                    )
-
                     dim_result = rater_dimension(text=text, slur_tagged_text=slur_tagged_text)
                     # hate_result = rater_hate(text=text) #actually already in the dim_results, no need to call it again
                     dim_ratings = {}

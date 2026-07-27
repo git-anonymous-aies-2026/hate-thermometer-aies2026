@@ -6,9 +6,9 @@ rsdb_slurs.json
 rsdb_slurs_with_dups.json
 
 # Data and outputs
-hate_thermometer_data/outputs
 MFRM_AIES26/MFRM_Data/
 MFRM_AIES26/output files/
+hate_classification.py
 # *.csv
 MFRM_AIES26
 *.json          # excludes rsdb_slurs.json

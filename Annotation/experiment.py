@@ -92,8 +92,8 @@ response = lm("what is the capital of France?")
 print(response)
 print()
 
-num_samples = 2
-num_runs = 1
+num_samples = 250
+num_runs = 5
 llm_full_name = dspy.settings.lm.model
 llm_model_name = str(llm_full_name).split('/')[-1] # Extract model name only
 
@@ -130,7 +130,7 @@ def main(seed=42):
     #convert back to HF for rest of implementation
     sample_data = Dataset.from_pandas(
         llm_input_sample,
-        preserve_index=False  # Don't include pandas index
+        preserve_index=False  # no pandas index
     )
 
     print(f"Loaded {len(sample_texts)} unique texts.")
@@ -138,9 +138,9 @@ def main(seed=42):
     print(f"\nLLM Input Dataset rows (strictly deduplicated): {len(sample_data)}")
     print()
 
-    # # ==========================================================================
-    # # STEP 3: Slur Tagging
-    # # ==========================================================================
+    # ==========================================================================
+    # STEP 3: Slur Tagging
+    # ==========================================================================
     print("\n" + "="*80)
     print("STEP 3: SLUR TAGGING")
     print("="*80)
@@ -152,6 +152,26 @@ def main(seed=42):
     ]
     sample_data = sample_data.add_column("slur_tagged_text", slur_tagged_texts)
     print("\nSlur tagging Completed...\n")
+
+    # ==========================================================================
+    # STEP 3b: Ablation, No Slur Tagging
+    # ==========================================================================
+
+    print("\n" + "="*80)
+    print("STEP 3b: ABLATION — NO SLUR TAGGING")
+    print("="*80)
+
+    # Convert to pandas, set slur column to None, convert back
+    sample_data_no_slur = sample_data.to_pandas()
+    sample_data_no_slur['slur_tagged_text'] = None  #add None everywhere in the slur
+    sample_data_no_slur = Dataset.from_pandas(
+        sample_data_no_slur,
+        preserve_index=False #no panda index
+    )
+
+    print(f"Ablation dataset ready: {len(sample_data_no_slur)} comments")
+    print(f"Slur tagged text null? {sample_data_no_slur['slur_tagged_text'][:3]}")
+
 
     # # ==========================================================================
     # # STEP 4: Initialize Raters
@@ -189,7 +209,7 @@ def main(seed=42):
 
         # Annotate
         results  = get_llm_ratings_with_majority_vote(
-            sample_data,
+            sample_data,  # slur_tagged_text = None, use sample_data_no_slur here for ablation no slur tagging
             rater_dimension = rater,
             n_runs          = num_runs,
             llm_model_name  = run_label

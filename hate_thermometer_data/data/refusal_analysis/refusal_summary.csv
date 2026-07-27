@@ -1,0 +1,10 @@
+,sentiment,respect,insult,humiliate,status,dehumanize,violence,genocide,attack_defend,hatespeech
+gemini_modu,0,10,10,10,11,10,10,10,10,0
+gpt_5-mini_modu,0,21,21,21,21,21,21,21,21,0
+GPT5_mono,0,29,29,29,29,29,29,29,29,0
+claude_mono,0,52,52,52,52,52,52,52,52,0
+gpt_5-mini_mono,0,23,23,23,23,23,23,23,23,0
+gemini_mono,0,9,9,9,9,9,9,9,9,0
+deepseek_mono,0,35,35,35,35,35,35,35,35,0
+claude_modu,0,45,45,45,62,45,45,45,45,0
+deepseek_modu,0,32,32,32,32,32,32,32,32,0

@@ -5,12 +5,14 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent # relative to project root
 
 # Then navigate to your data
-DATA_DIR_RAW   = PROJECT_ROOT / 'final_AIES_2026' / 'data' / 'raw_data'
-DATA_DIR   = PROJECT_ROOT / 'final_AIES_2026' / 'data' / 'patched_data'
-DATA_DIR_MFRM   = PROJECT_ROOT / 'final_AIES_2026' / 'data' / 'mfrm_data'
-OUTPUT_DIR = PROJECT_ROOT / 'final_AIES_2026' / 'outputs' / 'mfrm_results'
+DATA_DIR_RAW   = PROJECT_ROOT / 'data_outputs_ablate' / 'data' / 'raw_data'
+DATA_DIR   = PROJECT_ROOT / 'data_outputs_ablate' / 'data' / 'patched_data'
+DATA_DIR_MFRM   = PROJECT_ROOT / 'data_outputs_ablate' / 'data' / 'mfrm_data'
+OUTPUT_DIR = PROJECT_ROOT / 'data_outputs_ablate' / 'outputs' / 'mfrm_results'
+OUTPUT_DIR_stats = PROJECT_ROOT / 'data_outputs_ablate' / 'outputs' / 'stats'
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR_stats.mkdir(parents=True, exist_ok=True)
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 DATA_DIR_RAW.mkdir(parents=True, exist_ok=True)
 DATA_DIR_MFRM.mkdir(parents=True, exist_ok=True)

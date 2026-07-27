@@ -209,7 +209,7 @@ def validate_completeness(df, n_runs=5):
             vote_dists.append((row.Index, None))
     
     if parse_errors:
-        print(f"\n❌ {len(parse_errors)} parsing errors found!")
+        print(f"\n{len(parse_errors)} parsing errors found!")
         for idx, error in parse_errors[:10]:
             print(f"  Row {idx+1}: {error}")
         return False
@@ -240,7 +240,7 @@ def validate_completeness(df, n_runs=5):
                 issues_by_index[idx] = []
             issues_by_index[idx].append(issue)
         # print(f"\nAffected rows: {len(issues_by_index)}")
-        print(f"\n❌ VALIDATION FAILED: {len(incomplete_issues)} incomplete dimensions "
+        print(f"\nVALIDATION FAILED: {len(incomplete_issues)} incomplete dimensions "
               f"across {len(issues_by_index)} rows")
         # Show first 5 rows with issues
         for idx in list(issues_by_index.keys())[:5]:
@@ -249,6 +249,6 @@ def validate_completeness(df, n_runs=5):
                 print(f"    {issue['dimension']}: {issue['votes']}/{issue['needed']} votes")
         return False
     else:
-        print(f"\n✅ VALIDATION PASSED: All {len(df)} rows complete!")
+        print(f"\nVALIDATION PASSED: All {len(df)} rows complete!")
         return True
 
